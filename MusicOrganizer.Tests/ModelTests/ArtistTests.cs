@@ -20,5 +20,16 @@ namespace MusicOrganizer.Tests
         Artist newArtist = new Artist("Test Artist");
         Assert.AreEqual(typeof(Artist), newArtist.GetType());
       }
+
+      
+      [TestMethod]
+      public void GetName_ReturnsName_String()
+      {
+        string name = "Test Artist";
+        Artist newArtist = new Artist(name);
+        string result = newArtist.Name;
+        Assert.AreEqual(name, result);
+      }
+
     }
 }
