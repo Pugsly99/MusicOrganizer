@@ -29,7 +29,19 @@ namespace MusicOrganizer.Tests
       Assert.AreEqual(name, result);
     }
 
-    //[TestMethod]
-    //public void 
+    [TestMethod]
+    public void GetAll_ReturnsAll_RecordList()
+    {
+      string nameOne  = "name1";
+      string nameTwo = "name2";
+      Record newRecordOne = new Record(nameOne);
+      Record newRecordTwo = new Record(nameTwo);
+      List<Record> newRecords = new List<Record> { newRecordOne, newRecordTwo};
+
+      List<Record> result = Record.GetAll();
+
+      CollectionAssert.AreEqual(newRecords, result);
+
+    }
   }
 }
