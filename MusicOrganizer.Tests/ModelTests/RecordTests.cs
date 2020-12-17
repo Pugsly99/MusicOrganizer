@@ -41,7 +41,17 @@ namespace MusicOrganizer.Tests
       List<Record> result = Record.GetAll();
 
       CollectionAssert.AreEqual(newRecords, result);
+    }
 
+    [TestMethod]
+    public void GetId_ReturnIdOfRecord_Int()
+    {
+      string name = "name";
+      Record newRecord = new Record(name);
+
+      int result = newRecord.Id;
+
+      Assert.AreEqual(1, result);
     }
   }
 }
